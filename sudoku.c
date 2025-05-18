@@ -50,7 +50,7 @@ int is_valid(Node* n){
     for(int k = 0; k < 10;k++) visitado[k] = 0;
     for(int j = 0; j < 9; j++){
       int valor = n->sudo[i][j];
-      if(valor != NULL){
+      if(valor != 0){
         if(visitado[valor]) return 0;
         visitado[valor] = 1;
       }
