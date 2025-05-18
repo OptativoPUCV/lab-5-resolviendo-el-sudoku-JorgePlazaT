@@ -45,17 +45,33 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
   int visitado[10]; //revisar columnas, filas o submatriz
-
+//ver que no se repita ninguna fila 
   for(int i = 0; i < 9; i++){
     for(int k = 0; k < 10;k++) visitado[k] = 0;
-    for(int j = 0; j < 9; j++){
+    for(int j = 0; j < 9; j++){ //recorrer cada fila de i
       int valor = n->sudo[i][j];
       if(valor != 0){
-        if(visitado[valor]) return 0;
+        if(visitado[valor]) return 0; //si esta reetido, es invalido
+        visitado[valor] = 1; //marcar numero q aparecio en la fila 
+      }
+    }
+  }
+//ver que no se repita ninugna columna
+  for(int i = 0; i < 9; i++){
+    for(int k = 0; k < 10;k++) visitado[k] = 0;
+    for(int j = 0; j < 9; j++){ 
+      int valor = n->sudo[i][j];
+      if(valor != 0){
+        if(visitado[valor]) return 0; 
         visitado[valor] = 1;
       }
     }
   }
+
+
+
+
+
     return 1;
 }
 
