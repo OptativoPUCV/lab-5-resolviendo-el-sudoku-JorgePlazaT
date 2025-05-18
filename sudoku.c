@@ -47,7 +47,7 @@ int is_valid(Node* n){
   int visitado[10]; //revisar columnas, filas o submatriz
 
   for(int i = 0; i < 9; i++){
-    for(int k = 0; k < 9;k++) visitado[k] = 0;
+    for(int k = 0; k < 10;k++) visitado[k] = 0;
     for(int j = 0; j < 9; j++){
       int valor = n->sudo[i][j];
       if(valor != NULL){
@@ -56,9 +56,6 @@ int is_valid(Node* n){
       }
     }
   }
-
-
-  
     return 1;
 }
 
