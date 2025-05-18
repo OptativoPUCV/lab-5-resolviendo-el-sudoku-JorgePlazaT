@@ -79,12 +79,6 @@ List* get_adj_nodes(Node* n){
 
 
 int is_final(Node* n){
-
-  int visitiado [9];
-
-
-
-
     return 0;
 }
 
