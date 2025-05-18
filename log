@@ -47,3 +47,18 @@ do., 18 de may. de 2025 16:51:37:
  tests:  2|4
 total_score: 15/70
 f93c6b6
+do., 18 de may. de 2025 17:52:35: 
+ sudoku.c | 22 +++++++++++++++++++++-
+ 1 file changed, 21 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'is_valid':
+sudoku.c:53:16: error: comparison between pointer and integer [-Werror]
+       if(valor != NULL){
+                ^~
+sudoku.c: In function 'is_final':
+sudoku.c:86:7: error: unused variable 'visitiado' [-Werror=unused-variable]
+   int visitiado [9];
+       ^~~~~~~~~
+cc1.exe: all warnings being treated as errors
+0a54f4d
