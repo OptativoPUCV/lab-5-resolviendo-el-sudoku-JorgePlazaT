@@ -58,7 +58,7 @@ int is_valid(Node* n){
   }
 //ver que no se repita ningun numero en las columas
   for(int j = 0; j < 9; j++){
-          int visitado[10] = {0};
+    for(int k = 0; k < 10;k++) visitado[k] = 0;
     for(int i = 0; i < 9; i++){ 
       int valor = n->sudo[i][j];
       if(valor != 0){
@@ -67,17 +67,22 @@ int is_valid(Node* n){
       }
     }
   }
-/*
+
   for(int columna = 0; columna < 3; columna++){
     for(int fila = 0; fila < 3; fila++){
+      for(int k = 0; k < 10;k++) visitado[k] = 0;
+      for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+          int numero = n->sudo[columna*3+1][fila*3+1];
+          if(numero !=0){
+            if(visitado[numero]) return 0;
+            visitado[numero] = 1;
+          }
+        }
+      }
+
     }
   }
-*/
-
-
-
-
-
     return 1;
 }
 
