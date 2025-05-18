@@ -73,7 +73,7 @@ int is_valid(Node* n){
       for(int k = 0; k < 10;k++) visitado[k] = 0;
       for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-          int numero = n->sudo[columna*3+i][fila*3+j];
+          int numero = n->sudo[fila*3 + i][columna*3 + j];
           if(numero !=0){
             if(visitado[numero]) return 0;
             visitado[numero] = 1;
@@ -86,25 +86,24 @@ int is_valid(Node* n){
 }
 
 List* get_adj_nodes(Node* n){
-
   List* list = createList();
-  for(int i = 0;i< 9;i++){
-    for(int j = 0;j<9;j++){
+  for(int i = 0;i < 9;i++){
+    for(int j = 0; j < 9;j++){
       if(n->sudo[i][j] == 0){
-        for(int k = 0; k <= 9; k++){
+        for(int k = 1; k <= 9; k++){
           Node* newNodo = copy(n);
-          newNodo->sudo[i][j] = k + 1;
+          newNodo->sudo[i][j] = k;
           if(is_valid(newNodo)) pushBack(list,newNodo);
-          else{
-            free(newNodo);
-          }
-          return list;
+          else free(newNodo);
         }
+        return list;
       }
     }
   }
   return list;
 }
+
+
 
 
 int is_final(Node* n){

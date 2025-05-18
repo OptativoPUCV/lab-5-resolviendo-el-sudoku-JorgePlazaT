@@ -140,3 +140,9 @@ do., 18 de may. de 2025 19:04:17:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 80c8e38
+do., 18 de may. de 2025 19:11:49: 
+ sudoku.c | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+ tests:  6|2
+total_score: 45/70
+3ec7456
