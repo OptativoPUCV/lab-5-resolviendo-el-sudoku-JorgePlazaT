@@ -73,7 +73,7 @@ int is_valid(Node* n){
       for(int k = 0; k < 10;k++) visitado[k] = 0;
       for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-          int numero = n->sudo[columna*3+1][fila*3+1];
+          int numero = n->sudo[columna*3+i][fila*3+j];
           if(numero !=0){
             if(visitado[numero]) return 0;
             visitado[numero] = 1;
